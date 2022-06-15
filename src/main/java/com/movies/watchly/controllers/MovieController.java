@@ -47,7 +47,7 @@ public class MovieController {
     @GetMapping(path = "/movies/runtime")
     public ResponseEntity<List<Movie>> getMoviesBasedOnRuntime(@RequestParam Long limit) {
         List<Movie> movies = movieService.getMoviesSortedByDuration(limit);
-        return new ResponseEntity<>(movies, HttpStatus.OK); // ok3
+        return new ResponseEntity<>(movies, HttpStatus.OK); // ok4
     }
 
 
