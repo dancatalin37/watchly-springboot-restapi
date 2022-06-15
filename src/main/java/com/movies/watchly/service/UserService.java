@@ -19,13 +19,10 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
-
     private final UserRepository userRepository;
-
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Set<Role> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 

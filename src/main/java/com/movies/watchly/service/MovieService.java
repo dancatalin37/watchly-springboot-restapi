@@ -15,7 +15,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MovieService {
 
+
     private final MovieRepository movieRepository;
+
 
     /**
      * Gets all the movies from the database
@@ -80,6 +82,7 @@ public class MovieService {
 
     public List<Movie> getMoviesSortedByRatings(Long limit) {
         List<Movie> movies = movieRepository.findAll();
+
         return movies.stream().sorted(Comparator.comparing((Movie::getAverageRating))
                 .reversed()).limit(limit).collect(Collectors.toList());
     }

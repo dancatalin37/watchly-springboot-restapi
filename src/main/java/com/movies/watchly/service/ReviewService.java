@@ -60,9 +60,6 @@ public class ReviewService {
         sumOfTotalRatings += review.getGrade();
         int numberOfReviews = movie.getReviews().size() + 1;
 
-        System.out.println(sumOfTotalRatings);
-        System.out.println(numberOfReviews);
-
         int averageRating = sumOfTotalRatings / numberOfReviews;
 
         movie.setAverageRating(averageRating);
